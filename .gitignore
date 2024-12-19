@@ -31,5 +31,9 @@
 *.out
 *.app
 /.vs/CrossPlatformMixed/FileContentIndex
-/x64/Debug
+/x64
+/x32
 /tmp
+/test
+/.vs
+/build
