@@ -30,3 +30,6 @@
 *.exe
 *.out
 *.app
+/.vs/CrossPlatformMixed/FileContentIndex
+/x64/Debug
+/tmp
