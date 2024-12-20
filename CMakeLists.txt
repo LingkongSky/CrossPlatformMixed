@@ -14,7 +14,7 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/build)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/build)
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/build)
 
-add_executable (CrossPlatformMixed "main.cpp"  "md5.h"  "md5.cpp"   "crossPlatform.h")
+add_executable (CrossPlatformMixed "main.cpp"  "md5.h"  "md5.cpp" "utils.cpp" "crossPlatform.h")
 
 if (CMAKE_SYSTEM_NAME MATCHES "Linux")
 	target_link_libraries(CrossPlatformMixed pthread)

@@ -1,5 +1,22 @@
-# CrossPlatformMixed
-## English
+ **- [English](#English)**
+ - [Project Overview](#Project-Overview)
+ - [Function Description](Function-Description)
+ - [Compilation](#Compilation)
+ - [Execution](#Execution)
+ - [License](#License)
+ - [See also](#See-also)
+ 
+
+ **- [简体中文](#简体中文)**
+ - [项目概述](#项目概述)
+ - [功能描述](#功能描述)
+ - [编译](#编译)
+ - [运行](#运行)
+ - [协议](#协议)
+ - [另见](#另见)
+
+
+# English
 
 ## Project Overview
 `CrossPlatformMixed` is a cross-platform executable file mixing tool. It allows users to merge one Windows executable file and one Linux executable file into a single file, and automatically selects the appropriate program to execute at runtime based on the operating system.
@@ -8,7 +25,7 @@
 - **Input Content**: The program accepts two parameters, which are the paths of the Windows and Linux executable files, in any order.
 - **Output Result**: Generates a mixed file, defaulting to the name of the Windows executable file.
 
-## Usage Method
+## Usage
 
 ### Compilation
 ```sh
@@ -24,6 +41,7 @@ When running the program, you need to provide two parameters, which are the path
 ```sh
 ./CrossPlatformMixed [path/to/windows.exe] [path/to/linux]
 ```
+The result file will be save in the output folder.
 
 ## License
 CrossPlatformMixed is released under the [MIT](LICENSE).
@@ -33,7 +51,7 @@ CrossPlatformMixed is released under the [MIT](LICENSE).
 - <https://github.com/jart/cosmopolitan>
 
 
-## 简体中文
+# 简体中文
 
 ## 项目概述
 `CrossPlatformMixed` 是一个跨平台的可执行文件混合工具。它允许用户将一个Windows可执行文件和一个Linux可执行文件合并成一个单一的文件，并在运行时根据操作系统自动选择合适的程序执行。
@@ -57,7 +75,7 @@ make
 ```sh
 ./CrossPlatformMixed [path/to/windows.exe] [path/to/linux]
 ```
-
+结果文件将会保存到output文件夹中。
 
 ## 协议
 CrossPlatformMixed遵守[MIT](LICENSE)协议.

@@ -118,20 +118,16 @@ int main(int argc, char** argv) {
 
 	string target_shell = "./tmp/template.sh";
 
-	// 复制shell字符串生成到临时文件夹
-
-	ofstream outputFile(target_shell);
+	// 保存shell变量为文件
+	ofstream outputFile(target_shell, ios::binary);
 	if (outputFile.is_open()) {
-		outputFile << template_shell_content << endl;
+		outputFile << template_shell_content << '\n';
 		outputFile.close();
 	}
 	else {
 		cerr << "Can not create the target file" << endl;
 		return 1;
 	}
-
-
-
 
 	// 对模板进行处理
 	if (!replaceStringInFile(target_shell, "EXTRACTDIR", extract_dir)
@@ -140,7 +136,6 @@ int main(int argc, char** argv) {
 		|| !replaceStringInFile(target_shell , "TARGETMD5", file_md5)) {
 		return 1;
 	}
-
 
 
 	// 将脚本放入程序中
@@ -154,7 +149,7 @@ int main(int argc, char** argv) {
 		return 1;
 	}
 
-	filesystem::remove_all("./tmp");
+	//filesystem::remove_all("./tmp");
 
 	cout << "Process finished!" << endl;
 
