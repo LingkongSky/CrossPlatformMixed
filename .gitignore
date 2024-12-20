@@ -25,15 +25,15 @@
 *.la
 *.a
 *.lib
-
 # Executables
 *.exe
 *.out
 *.app
-/.vs/CrossPlatformMixed/FileContentIndex
 /x64
 /x32
 /tmp
 /test
 /.vs
 /build
+/.vscode
+/out

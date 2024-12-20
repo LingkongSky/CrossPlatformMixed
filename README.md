@@ -26,9 +26,9 @@ When running the program, you need to provide two parameters, which are the path
 ```
 
 ## License
-CrossPlatformMixed  is released under the [MIT](license).
+CrossPlatformMixed is released under the [MIT](LICENSE).
 
-## Thanks
+## See also
 - <https://github.com/ulwanski/md5>
 - <https://github.com/jart/cosmopolitan>
 
@@ -63,6 +63,6 @@ make
 CrossPlatformMixed遵守[MIT](LICENSE)协议.
 
 
-## 致谢
+## 另见
 - <https://github.com/ulwanski/md5>
 - <https://github.com/jart/cosmopolitan>
