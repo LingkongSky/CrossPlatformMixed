@@ -33,9 +33,4 @@
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="template.sh">
-      <Filter>资源文件</Filter>
-    </None>
-  </ItemGroup>
 </Project>

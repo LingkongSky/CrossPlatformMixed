@@ -140,9 +140,6 @@
     <ClInclude Include="crossPlatform.h" />
     <ClInclude Include="md5.h" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="template.sh" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

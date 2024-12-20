@@ -10,6 +10,8 @@
 // 通过linux和win对于指令解释的差异来执行linux
 // 修改exe文件的pe部分实现注释 将拥有可执行功能的shell脚本添加到文件末尾 将linux可执行文件添加到文件末尾
 
+
+// 打包时连带template.sh
 int main(int argc, char** argv) {
 
 	if (argc < 3) {
@@ -53,15 +55,19 @@ int main(int argc, char** argv) {
 	string execute_name = extractFileNameWithoutExtension(win_path);
 
 
-	createFolder("./tmp");
+	if (!createFolder("./tmp") || !createFolder("./output")) {
+		cerr << "Can not create the target folder" << endl;
+		return 1;
+	}
 
 	// 处理exe文件的pe头
 	/* 防止pe的二进制数据干扰
 	通过EOF标签将包裹住的内容转化为输入
 	存在不需要包裹的部分 -> 脚本结束后直接exit
 	*/
-	string target_file = "./tmp/" + execute_name;
+	string target_file = "./output/" + execute_name;
 	if (!copyFile(win_path, target_file)) {
+		cerr << "Can not create the target file" << endl;
 		return 1;
 	}
 
@@ -112,10 +118,20 @@ int main(int argc, char** argv) {
 
 	string target_shell = "./tmp/template.sh";
 
-	// 复制模板shell到临时文件夹
-	if (!copyFile("./template.sh", target_shell)) {
+	// 复制shell字符串生成到临时文件夹
+
+	ofstream outputFile(target_shell);
+	if (outputFile.is_open()) {
+		outputFile << template_shell_content << endl;
+		outputFile.close();
+	}
+	else {
+		cerr << "Can not create the target file" << endl;
 		return 1;
 	}
+
+
+
 
 	// 对模板进行处理
 	if (!replaceStringInFile(target_shell, "EXTRACTDIR", extract_dir)
@@ -138,6 +154,7 @@ int main(int argc, char** argv) {
 		return 1;
 	}
 
+	filesystem::remove_all("./tmp");
 
 	cout << "Process finished!" << endl;
 
